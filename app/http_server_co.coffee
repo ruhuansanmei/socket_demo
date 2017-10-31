@@ -21,5 +21,10 @@ startServer = () =>
     socket.emit "add Success", {weiboer_id : 123123}
     socket.on "disconnect", () => 
       console.log "closed"
+    socket.on "special message", (data) => 
+      console.log(data)
+      socket.emit "back message",data
+
+
   
 startServer()
